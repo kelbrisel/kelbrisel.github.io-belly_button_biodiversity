@@ -88,7 +88,8 @@ function buildCharts(sample) {
       y: yticks,
       text: otu_labels.slice(0,10).reverse(),
       type: "bar",
-      orientation: "h"
+      orientation: "h",
+      colorscale: 'sunset'
     }];
 
     // 9. Create the layout for the bar chart. 
@@ -109,7 +110,7 @@ function buildCharts(sample) {
       marker: {
         color: otu_ids, 
         size: sample_values, 
-        colorscale: 'rdBu'
+        colorscale: 'sunset'
       }
     }];
 
@@ -117,7 +118,7 @@ function buildCharts(sample) {
     var bubbleLayout = {
       title: "<b>Bacteria Cultures per Sample</b>",
       xaxis: { title: "OTU ID"},
-      hovermode: "closest" 
+      hovermode: "closest"
     };
 
     // 3. Use Plotly to plot the data with the layout.
@@ -134,17 +135,18 @@ function buildCharts(sample) {
         bar: { color: "black" },
         axis: { range: [null, 10] },
         steps: [
-          { range: [0, 2], color: "red" },
-          { range: [2, 4], color: "orange" },
-          { range: [4, 6], color: "yellow" },
-          { range: [6, 8], color: "lime" },
-          { range: [8, 10], color: "green" },
+          { range: [0, 2], color: "deeppink" },
+          { range: [2, 4], color: "darkturquoise"},
+          { range: [4, 6], color: "darkseagreen" },
+          { range: [6, 8], color: "cornflowerblue" },
+          { range: [8, 10], color: "darkcyan" },
         ]}
     }];
     
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = { 
-      automargin: true
+      automargin: true,
+      font: {color: "navy"}
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
